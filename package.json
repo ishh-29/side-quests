@@ -1,0 +1,43 @@
+{
+  "name": "synapse-player",
+  "version": "1.0.0",
+  "description": "A neuromorphic, dark-themed desktop music widget with real Spotify Web API control.",
+  "main": "main.js",
+  "author": "You",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^31.3.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.example.synapseplayer",
+    "productName": "Synapse Player",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*"
+    ],
+    "mac": {
+      "icon": "assets/icon.png",
+      "category": "public.app-category.music",
+      "target": "dmg"
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": "nsis"
+    },
+    "linux": {
+      "icon": "assets/icon.png",
+      "target": "AppImage",
+      "category": "Audio"
+    }
+  }
+}
